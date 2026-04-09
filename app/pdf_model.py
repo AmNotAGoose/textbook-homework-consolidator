@@ -22,7 +22,7 @@ class PDFModel:
         return self.page_idx + 1
 
     def get_current_page_image_path(self):
-        image = upsert_page_image_to_cache(self.get_current_page())
+        image = upsert_page_image_to_cache(self.get_current_page(), self.page_idx, self.document_id)
         return image
 
     def get_current_page(self):
