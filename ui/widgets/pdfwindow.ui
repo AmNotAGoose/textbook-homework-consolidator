@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1267</width>
-    <height>882</height>
+    <width>1339</width>
+    <height>790</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
+  <layout class="QHBoxLayout" name="horizontalLayout_6">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <property name="sizeConstraint">
@@ -34,63 +34,6 @@
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Offset Pages</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit_2">
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <property name="sizeConstraint">
-        <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
-       </property>
-       <item>
-        <widget class="QPushButton" name="PrevButton">
-         <property name="text">
-          <string>Prev</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="nextButton">
-         <property name="text">
-          <string>Next</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
       <widget class="Line" name="line">
        <property name="orientation">
         <enum>Qt::Orientation::Horizontal</enum>
@@ -98,72 +41,28 @@
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QPushButton" name="btn_Add">
          <property name="text">
-          <string>Enter question string OR human readable question format (press convert using AI first)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
+          <string>Add Question</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QTextEdit" name="textEdit"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btn_Remove">
          <property name="text">
-          <string>Convert Using AI</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="text">
-          <string>Start</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>Stop</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_6">
-         <property name="text">
-          <string>Undo Last Selection</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_7">
-         <property name="text">
-          <string>Redo Last Selection</string>
+          <string>Remove Question</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
      <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
+      <layout class="QVBoxLayout" name="verticalLayout_5"/>
+     </item>
+     <item>
+      <widget class="QListWidget" name="l_questionsList"/>
      </item>
      <item>
       <widget class="QLabel" name="label_2">
@@ -176,14 +75,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="btn_Export">
        <property name="text">
         <string>Export</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="btn_ExportLocation">
        <property name="text">
         <string>Open Export Location</string>
        </property>
@@ -192,17 +91,228 @@
     </layout>
    </item>
    <item>
-    <widget class="QGraphicsView" name="graphicsView">
-     <property name="minimumSize">
-      <size>
-       <width>900</width>
-       <height>0</height>
-      </size>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="q_btn_Clear">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>QUESTIONS Select</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Offset Pages</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="q_le_Offset">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QPushButton" name="q_btn_Prev">
+           <property name="text">
+            <string>Prev</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="q_le_Page"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="q_btn_Next">
+           <property name="text">
+            <string>Next</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="SelectableGraphicsView" name="q_GraphicsView">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="a_btn_Clear">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>ANSWERS Select</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Offset Pages</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="a_le_Offset">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="sizeConstraint">
+          <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QPushButton" name="a_btn_Prev">
+           <property name="text">
+            <string>Prev</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="a_le_Page"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="a_btn_Next">
+           <property name="text">
+            <string>Next</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="SelectableGraphicsView" name="a_GraphicsView">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SelectableGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>ui.selectable_graphics_view</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
