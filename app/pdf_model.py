@@ -11,6 +11,7 @@ class PDFModel:
         self.document_path = document_path
         self.page_count = self.document.page_count
         self.page_idx = 0
+        self.page_offset = 0
 
         self.document_id = self.get_document_id()
 
@@ -38,7 +39,7 @@ class PDFModel:
 
         self.page_idx = self.page_idx % self.page_count
 
-    def skip_to_page(self, page_number):
+    def flip_to_page(self, page_number):
         page_idx = page_number - 1
         if 0 <= page_idx < self.document.page_count:
             self.page_idx = page_idx

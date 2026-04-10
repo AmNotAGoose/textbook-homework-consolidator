@@ -22,7 +22,7 @@ class SelectableGraphicsView(QGraphicsView):
         if self._drag_start is not None:
             current = self.mapToScene(event.pos())
             rect = QRectF(self._drag_start, current).normalized()
-            self._update_rect(rect)
+            self.update_rect(rect)
 
         super().mouseMoveEvent(event)
 
@@ -37,11 +37,15 @@ class SelectableGraphicsView(QGraphicsView):
 
     def clear_selection(self):
         if self._rect_item is not None:
-            self.scene().removeItem(self._rect_item)
+            if self.scene():
+                self.scene().removeItem(self._rect_item)
             self._rect_item = None
 
-    def _update_rect(self, rect: QRectF):
-        if self._rect_item is None:
+    def update_rect(self, rect: QRectF):
+        try:
+            if self._rect_item is None:
+                self._rect_item = self.scene().addRect(rect, self._selection_pen)
+            else:
+                self._rect_item.setRect(rect)
+        except RuntimeError:
             self._rect_item = self.scene().addRect(rect, self._selection_pen)
-        else:
-            self._rect_item.setRect(rect)
